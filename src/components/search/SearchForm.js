@@ -7,13 +7,15 @@ const SearchForm = () => {
   const [name, setName] = useState("");
 
   return (
-    <div className="container">
+    <div>
       <Formik
         initialValues={{ name: "" }}
         validationSchema={Yup.object({
           name: Yup.string().required("Hero name is required"),
         })}
-        onSubmit={(values) => setName(values.name)}
+        onSubmit={(values) => {
+          setName(values.name);
+        }}
       >
         <Form>
           <label className="form-label">
@@ -25,12 +27,13 @@ const SearchForm = () => {
             name="name"
             type="text"
             placeholder="batman"
+            autoComplete="off"
           />
           <div>
             <ErrorMessage name="name" />
           </div>
 
-          <button type="submit" className="btn btn-dark my-2">
+          <button type="submit" className="btn btn-dark mt-3">
             Submit
           </button>
         </Form>

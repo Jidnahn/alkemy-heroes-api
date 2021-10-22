@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import * as axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = (url, data = {}, method = "get") => {
   const isMounted = useRef(true);
   const [state, setState] = useState({
     data: null,
@@ -17,9 +18,12 @@ const useFetch = (url) => {
   useEffect(() => {
     setState({ data: null, loading: true, error: null });
 
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((data) => {
+    axios({
+      method,
+      url,
+      data,
+    })
+      .then(({ data }) => {
         if (isMounted.current) {
           setState({
             loading: false,
@@ -35,6 +39,8 @@ const useFetch = (url) => {
           error: error,
         });
       });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   return state;

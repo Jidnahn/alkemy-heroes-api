@@ -4,7 +4,7 @@ import HeroList from "../heroes/HeroList";
 const HomeScreen = () => {
   return (
     <div className="container">
-      <h1>Home Screen</h1>
+      <h1>Your team</h1>
       <hr />
       <HeroList />
     </div>
