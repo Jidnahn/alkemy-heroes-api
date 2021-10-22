@@ -24,7 +24,7 @@ const LoginScreen = () => {
         onSubmit={async (values) =>
           axios({
             method: "post",
-            url: process.env.REACT_APP_LOGIN_URL,
+            url: `/loginapi/`,
             data: values,
           })
             .then(({ data }) =>
