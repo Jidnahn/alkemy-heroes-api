@@ -6,7 +6,7 @@ import HeroCardDetails from "./HeroCardDetails";
 const HeroDetails = ({ history }) => {
   const { heroId } = useParams();
 
-  const url = `${process.env.REACT_APP_BASE_API_URL}/api/${process.env.REACT_APP_API_KEY}/${heroId}`;
+  const url = `/api/${process.env.REACT_APP_API_KEY}/${heroId}`;
   const { data, loading, error } = useFetch(url);
 
   const result = !!data && data;
