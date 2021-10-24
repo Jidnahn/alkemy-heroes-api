@@ -25,3 +25,9 @@
   to = "http://challenge-react.alkemy.org"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/searchUrl/*"
+  to = "https://superheroapi.com"
+  status = 200
+  force = true
