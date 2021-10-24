@@ -24,7 +24,7 @@ const LoginScreen = () => {
         onSubmit={async (values) =>
           axios({
             method: "post",
-            url: `/login`,
+            url: process.env.REACT_APP_LOGIN_URL,
             data: values,
           })
             .then(({ data }) =>
