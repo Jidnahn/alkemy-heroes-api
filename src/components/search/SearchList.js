@@ -3,7 +3,7 @@ import SearchHeroCard from "./SearchHeroCard";
 import useFetch from "../hooks/useFetch";
 
 const SearchList = ({ name }) => {
-  const url = `/searchUrl/api/${process.env.REACT_APP_API_KEY}/search/${name}`;
+  const url = `/searchUrl/${process.env.REACT_APP_API_KEY}/search/${name}`;
   const { data, loading, error } = useFetch(url);
 
   const { results } = !!data && data;
