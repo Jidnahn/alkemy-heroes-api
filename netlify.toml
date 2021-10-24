@@ -20,15 +20,8 @@
 
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
 
-# The following redirect is intended for use with most SPAs that handle
-# routing internally.
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/login"
+  to = "http://challenge-react.alkemy.org"
   status = 200
-
-[[headers]]
-  # Define which paths this specific [[headers]] block will cover.
-  for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "*"
+  force = true
