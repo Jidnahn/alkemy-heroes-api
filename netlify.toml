@@ -26,8 +26,8 @@
   status = 200
   force = true
 
-
+[[redirects]]
   from = "/api/*"
-  to = "https://superheroapi.com/api"
+  to = "https://superheroapi.com/api/:splat"
   status = 200
   force = true
