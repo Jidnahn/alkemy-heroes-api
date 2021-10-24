@@ -27,7 +27,7 @@
   force = true
 
 [[redirects]]
-  from = "/searchUrl/*"
+  from = "/api/*"
   to = "https://superheroapi.com/api"
   status = 200
   force = true
